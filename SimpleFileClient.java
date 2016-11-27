@@ -13,22 +13,22 @@ public class SimpleFileClient {
         FileOutputStream fileOutputStream = null;
  
         try {
-            socket = new Socket("192.168.0.103", 2011);
+            socket = new Socket("ip", port);
             InputStream inputStream = socket.getInputStream();
  
             fileOutputStream = new FileOutputStream("download.jpg");
             byte[] dataBuff = new byte[10000];
             int length = inputStream.read(dataBuff);
-           // System.out.print("´Ù¿îÁß ");
+            System.out.print("Â´Ã™Â¿Ã®ÃÃŸ ");
             while (length != -1) {
                // System.out.print(".");
                 fileOutputStream.write(dataBuff, 0, length);
                 length = inputStream.read(dataBuff);
  
             }
-           // System.out.println();
+            System.out.println();
  
-           // System.out.println("ÆÄÀÏ ÀúÀå ¼º°ø");
+            System.out.println("Ã†Ã„Ã€Ã Ã€ÃºÃ€Ã¥ Â¼ÂºÂ°Ã¸");
  
         } catch (UnknownHostException e) {
             // TODO Auto-generated catch block
